@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        .banner {
+            height: 100vh;
+            width: 100vw;
+            background-image: url('../images/banner resort3.jpg');
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: black;
+        }
+
+        .navbar-brand {
+            color: black !important;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            margin-right: 10px;
+            margin-left: 10px;
+            color: black !important;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .nav-link.active {
+            border-bottom: 2px solid #3df42c;
+        }
+
+        .quote {
+            position: absolute;
+            top: 80%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Lobster', cursive;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .description {
+            font-size: 1.2em;
+        }
+
+        .description2 {
+            font-size: 2em;
+        }
+
+        .card-body {
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .card-img-top {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .icon {
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder;
+            text-align: left;
+            color: white;
+            margin: 10px;
+        }
+
+        .bless {
+            font-size: 1.3em;
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            color: white;
+            margin: 0px;
+        }
+
+        .bless2 {
+            font-size: 1.3em;
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        .link {
+            text-decoration: none;
+            font-size: .8em;
+        }
+
+        .rating {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            max-width: 150px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .rating h1 {
+            font-size: 3rem;
+            color: #2d4a80;
+        }
+
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            display: inline-block;
+            margin: 10px 15px;
+            font-size: 1rem;
+        }
+
+        .features ul li i {
+            color: #2d4a80;
+            margin-right: 8px;
+        }
+
+        .explore-btn {
+            background-color: #2d4a80;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .explore-btn:hover {
+            background-color: #203c65;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .manager-info {
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .images-container img {
+            width: 100%;
+            height: 10%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-radius-img {
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+
+        footer {
+            padding: 10px 20px;
+            bottom: 0;
+            width: 100%;
+
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .content2 {
+            margin-top: 30px;
+        }
+
+        footer {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+    </div>
+    <div class="quote">
+        About
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nautica Haven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="Facilitlies.html">FACILITIES& AMENITIES</a></li>
+                            <li><a class="dropdown-item" href="Dining.html">Dining</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="tent.html">Rooms</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.php">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link language-toggle" title="language">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                <path fill="#5cb145" d="M1 11H31V21H1z"></path>
+                                <path d="M5,4H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z" fill="#f6ce46"></path>
+                                <path d="M5,20H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z"
+                                    transform="rotate(180 16 24)" fill="#d83b3f"></path>
+                                <path
+                                    d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z"
+                                    opacity=".15"></path>
+                                <path fill="#fff"
+                                    d="M18.578 16.974L22.75 13.943 17.593 13.943 16 9.039 14.407 13.943 9.25 13.943 13.422 16.974 11.828 21.878 16 18.847 20.172 21.878 18.578 16.974z">
+                                </path>
+                                <path
+                                    d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z"
+                                    fill="#fff" opacity=".2"></path>
+                            </svg>
+                        </div>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <!-- Top Section -->
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="section-title">Find The Best Resort For Accommodation</h1>
+                <p>Welcome to the best resort in New York. Our resort is equipped with modern amenities
+                    and excellent services to make your stay unforgettable. We prioritize comfort and quality above all.
+                </p>
+                <p class="manager-info"><strong>Resort Manager</strong><br> Anna</p>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="../images/food.jpg" alt="Hotel Image" class="custom-radius-img">
+            </div>
+
+        </div>
+
+        <!-- Features Section -->
+        <div class="row my-5">
+            <div class="col-lg-6">
+                <div class="image-grid">
+                    <img src="../images/sea.jpg" alt="Image 1">
+                    
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title">We Give The Best Resort Facilities</h2>
+                <p>Our resort offers 24/7 service with a variety of amenities that cater to all your needs. Relax,
+                    unwind, and enjoy the best facilities we have to offer.</p>
+                <div class="features">
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill"></i> 24 Hour Services</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Swimming Pool</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Free WiFi</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Fitness Zone</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Kid Gaming Zone</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Locker Room</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Room Cleaning</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Safe & Secure</li>
+                    </ul>
+                </div>
+                <a href="#" class="explore-btn">Explore Facilities</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <footer class=" content2 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="icon">Nautica Haven</h3>
+                    <p class="bless">
+                        As we part ways, may your journey ahead be filled with joy, peace, and countless blessings.
+                        Until we meet again, take care and stay safe.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="icon">Contact Info</h3>
+                    <a href="tel:+95912345678" class="link">
+                        <pre class="bless2"><i class="bi bi-telephone-fill"> - 09123456789</i></pre>
+                    </a>
+                    <a href="mailto:nauticahaven@gmail.com" class="link">
+                        <pre class="bless2"><i class="bi bi-envelope-fill"> - nauticahaven@gmail.com</i></pre>
+                    </a>
+                    <a href="https://www.Nautica Haven.com" class="link">
+                        <pre class="bless2"><i class="bi bi-globe"> - www.Nautica Haven.com</i></pre>
+                    </a>
+                    <a href="https://www.google.com/maps/@16.8395368,95.85189,10z?hl=en&entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+                        class="link">
+                        <pre class="bless2"><i class="bi bi-geo-alt-fill"> - Yangon</i></pre>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="icon">Help Center</h3>
+                    <p class="bless2">Online Support</p>
+                    <p class="bless2">Privacy Police</p>
+                    <p class="bless2">Terms & Condition</p>
+
+                </div>
+            </div>
+        </div>
+        <hr style="border: 1px solid white;">
+
+        <div class="footer-content">
+            <p class="cpr">Copyright © 2024 Nautica Haven. All rights reserved.</p>
+            <p class="name">Nautica Haven</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

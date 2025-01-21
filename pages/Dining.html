@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        .banner {
+            height: 100vh;
+            width: 100vw;
+            background-image: url('../images/food\ banner.jpg');
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+        }
+        body {
+            overflow-x: hidden;
+            color: black;
+        }
+
+       .navbar-brand{
+            color: black !important;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.3); 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            margin-right: 10px;
+            margin-left: 10px;
+            color: black !important;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #3df42c;
+        }
+        .quote {
+            position: absolute;
+            top: 80%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Lobster', cursive;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 40px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+       
+        .team-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 40px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+        
+        .card-body {
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .card-img-top {
+            height: 400px;
+            object-fit: cover;
+        }
+        .icon{
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder;
+            text-align: left;
+            color: white;
+            margin: 10px;
+        }
+        .bless{
+            font-size: 1.3em;
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            color: white;
+            margin: 0px; 
+        }
+        .bless2{
+            font-size: 1.3em;
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            color: white;
+            margin: 20px; 
+            text-decoration: none;
+        }
+       .link{
+        text-decoration: none;
+        font-size: .8em;
+       }
+
+        footer {
+        padding: 10px 20px; 
+        bottom: 0;
+        width: 100%;
+        
+    }
+    
+    .content{
+        margin-top: 15px;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .chief{
+        width: 40%;
+        height: auto;
+    }
+    .content2{
+        margin-top: 30px;
+    }
+
+    .myButton {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:14px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#0a0a0a;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:14px 60px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.menu_title {
+    color: #000000 !important;
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    background: #fff;
+}
+
+.container2 {
+    display: flex;
+}
+
+.menu_price {
+    margin-left: auto;
+    color: #bb9f5d !important;
+    font-size: 20px;
+    font-weight: 700;
+    background: #fff;
+}
+
+.post_detail {
+    font-weight: 500;
+    letter-spacing: 0;
+    font-size: 12px;
+}
+
+.post_detail.menu_excerpt {
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: 'Raleway', 'Helvetica Neue', Arial, Verdana, sans-serif;
+    font-size: .9em;
+    width: auto;
+    max-width: 75%;
+    float: left;
+    margin-top: 5px;
+}
+
+    footer{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div class="banner">
+    </div>
+    <div class="quote">
+        Dining
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nautica Haven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="Facilitlies.html">FACILITIES& AMENITIES</a></li>
+                            <li><a class="dropdown-item" href="Dining.html">Dining</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="tent.html">Rooms</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.php">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+
+                     <!-- Toggle Language Button -->
+                     <li class="nav-item">
+                        <div class="nav-link language-toggle" title="language">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#5cb145" d="M1 11H31V21H1z"></path><path d="M5,4H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z" fill="#f6ce46"></path><path d="M5,20H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z" transform="rotate(180 16 24)" fill="#d83b3f"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path fill="#fff" d="M18.578 16.974L22.75 13.943 17.593 13.943 16 9.039 14.407 13.943 9.25 13.943 13.422 16.974 11.828 21.878 16 18.847 20.172 21.878 18.578 16.974z"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>
+                        </div> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Food and Drink Section -->
+    <div class="container food-drink-section">
+        <h3 class="section-title">All Food and Drink</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="../images/food.jpg" class="card-img-top" alt="Food 1">
+                    <h3><center>Food</center></h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../images/drink.jpg" class="card-img-top" alt="Food 2">
+                    <h3><center>Drink</center></h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../images/kitchen.jpg" class="card-img-top" alt="Food 3">
+                    <h3><center>Grill</center></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="container content2 d-flex justify-content-center align-items-center" >
+        <div class="myButton" id="toggleButton">Menu</div>
+    </div>
+
+    <div style="display: none;" id="toggle">
+        <div class="container content2">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../images/Pasta-Ebi-Tempura-To-Gomatare-490x314.jpg" class="img-thumbnail">
+                    <h5 class="menu_post container2">
+                        <span class="menu_title">Spicy Crab Ramen</span>
+                        <span class="menu_dots"></span>
+                        <span class="menu_price">$20</span>
+                    </h5>
+                    <div class="post_detail menu_excerpt">Crab / Veggie / Soup</div>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="../images/Fresh Crab With Lemon.jpg" class="img-thumbnail">
+                    <h5 class="menu_post container2">
+                        <span class="menu_title">Fresh Crab With Lemon</span>
+                        <span class="menu_dots"></span>
+                        <span class="menu_price">$14</span>
+                    </h5>
+                    <div class="post_detail menu_excerpt">Crab / Lemon / Garlic</div>
+                </div>
+
+                
+                <div class="col-lg-4">
+                    <img src="../images/Crab With Curry Sources.jpg" class="img-thumbnail">
+                    <h5 class="menu_post container2">
+                        <span class="menu_title">Crab With Curry Sources</span>
+                        <span class="menu_dots"></span>
+                        <span class="menu_price">$14.5</span>
+                    </h5>
+                    <div class="post_detail menu_excerpt">Crab / Potatoes / Rice</div>
+                </div>
+                </div>
+                <!-- second -->
+                <div class="container content2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="../images/Italian Source Mushroom.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Italian Source Mushroom</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$14</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Mushroom / Garlic / Veggies</div>
+                        </div>
+        
+                        <div class="col-lg-4">
+                            <img src="../images/Imported Salmon Steak.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Imported Salmon Steak</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$11.91</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Salmon / Veggies / Oil</div>
+                        </div>
+        
+                        
+                        <div class="col-lg-4">
+                            <img src="../images/Fried Chicken Salad.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Fried Chicken Salad</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$12</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Chicken / Butter / Veggies</div>
+                        </div>
+                        </div>
+                        
+                    </div>             
+                </div>
+
+                <!-- third -->
+                <div class="container content2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="../images/Grilled Salmon Sushi.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Grilled Salmon Sushi</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$12.5</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Rice / Salmon / Shoyu</div>
+                        </div>
+        
+                        <div class="col-lg-4">
+                            <img src="../images/Roast Pork (4 Sticks).jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Roast Pork (4 Sticks)</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$10.5</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Pork / Veggies / Shoyu</div>
+                        </div>
+        
+                        
+                        <div class="col-lg-4">
+                            <img src="../images/Baked Potato Pizza.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">Baked Potato Pizza</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$9</span>
+                            </h5>
+                            <div class="post_detail menu_excerpt">Potato / Bread / Cheese</div>
+                        </div>
+                        </div>
+                        
+                         <!--fourth-->
+                <div class="container content2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="../images/The mojito.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">THE MOJITO</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$6.5</span>
+                            </h5>
+                        </div>
+        
+                        <div class="col-lg-4">
+                            <img src="../images/Margarita.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">MARGARITA</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$7</span>
+                            </h5>
+                        </div>
+        
+                        
+                        <div class="col-lg-4">
+                            <img src="../images/Vodka tonic.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">VODKA TONIC</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$5</span>
+                            </h5>
+                        </div>
+                        </div>
+                        
+                    </div>             
+                </div>
+
+                <!--5-->
+                <div class="container content2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="../images/mango juice.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">MANGO JUICE</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$3</span>
+                            </h5>
+                        </div>
+        
+                        <div class="col-lg-4">
+                            <img src="../images/Orange juice.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">ORANGE JUICE</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$3</span>
+                            </h5>
+                        </div>
+        
+                        
+                        <div class="col-lg-4">
+                            <img src="../images/pineapple juice.jpg" class="img-thumbnail">
+                            <h5 class="menu_post container2">
+                                <span class="menu_title">PINEAPPLE JUICE</span>
+                                <span class="menu_dots"></span>
+                                <span class="menu_price">$3</span>
+                            </h5>
+                        </div>
+                        </div>
+                        
+                    </div>             
+                </div>
+                    </div>             
+                </div>
+
+               
+            </div>             
+        </div>
+
+        <!-- 34 -->
+
+        
+
+    </div>    
+
+    <div class="container content2">
+        <h2><center>Dining area</center></h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="../images/Dp1.jpg" class="img-thumbnail">
+            </div>
+            <div class="col-lg-6">
+                <img src="../images/Dp2.jpg" class="img-thumbnail">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container content2">
+        <h3 class="team-title">Meet the Team</h3>
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-3">
+            <h3 class="card-title">Jonh</h3>
+                  <h5>Executive Chef</h5>
+                  <p class="card-text lang-en">Born and raised in Cannes, France, Olivier Fajol’s culinary passion was ignited by his mother’s home cooking. After following this dream to culinary school, he began his career at the famed Hotel de Crillon in Paris, known for its Michelin stars. In 2004, Chef Fajol joined Four Seasons at the former resort in Terre Blanche, before moving to Mauritius in 2013, then to The St. Regis Bora Bora Resort.</p>
+                  <p class="card-text lang-mm">ပြင်သစ်နိုင်ငံ၊ Cannes တွင် မွေးဖွားကြီးပြင်းလာသူ Olivier Fajol သည် အချက်အပြုတ်ဝါသနာပါရာ သူ့အမေ၏ အိမ်တွင် ချက်ပြုတ်ခြင်းဖြင့်စတင်ခဲ့သည်။ ဒီအိပ်မက်ကို အချက်အပြုတ်ကျောင်းတက်ပြီးနောက်မှာတော့ Michelin stars လို့နာမည်ကြီးတဲ့ Paris ရှိ Hotel de Crillon မှာ သူ့ရဲ့အသက်မွေးဝမ်းကြောင်းကို စတင်ခဲ့ပါတယ်။ 2004 ခုနှစ်တွင် Chef Fajol သည် Terre Blanche ရှိ ယခင်အပန်းဖြေစခန် Four Seasons တွင်ပါဝင်ခဲ့ပြီး 2013 ခုနှစ်တွင် Mauritius သို့ပြောင်းရွှေ့ပြီးနောက် St. Regis Bora Bora Resort သို့ရောက်ရှိခဲ့သည်။</p>
+
+        </div>
+        <div class="col-lg-6">
+            <img src="../images/chief 1.jpg" class="chief" alt="...">
+        </div>
+    </div>
+</div>
+
+    <div class="container content2">
+        
+    <div class="row">
+        
+        <div class="col-lg-6 \">
+            <img src="../images/chief 2.jpg" class="chief float-end" alt="...">
+        </div>
+        <div class="col-lg-3">
+            <h3 class="card-title">Adeline</h3>
+                  <h5>Executive Chef</h5>
+                  <p class="card-text lang-en">Born and raised in Cannes, France, Olivier Fajol’s culinary passion was ignited by his mother’s home cooking. After following this dream to culinary school, he began his career at the famed Hotel de Crillon in Paris, known for its Michelin stars. In 2004, Chef Fajol joined Four Seasons at the former resort in Terre Blanche, before moving to Mauritius in 2013, then to The St. Regis Bora Bora Resort.</p>
+                  <p class="card-text lang-mm">ပြင်သစ်နိုင်ငံ၊ Cannes တွင် မွေးဖွားကြီးပြင်းလာသူ Olivier Fajol သည် အချက်အပြုတ်ဝါသနာပါရာ သူ့အမေ၏ အိမ်တွင် ချက်ပြုတ်ခြင်းဖြင့်စတင်ခဲ့သည်။ ဒီအိပ်မက်ကို အချက်အပြုတ်ကျောင်းတက်ပြီးနောက်မှာတော့ Michelin stars လို့နာမည်ကြီးတဲ့ Paris ရှိ Hotel de Crillon မှာ သူ့ရဲ့အသက်မွေးဝမ်းကြောင်းကို စတင်ခဲ့ပါတယ်။ 2004 ခုနှစ်တွင် Chef Fajol သည် Terre Blanche ရှိ ယခင်အပန်းဖြေစခန် Four Seasons တွင်ပါဝင်ခဲ့ပြီး 2013 ခုနှစ်တွင် Mauritius သို့ပြောင်းရွှေ့ပြီးနောက် St. Regis Bora Bora Resort သို့ရောက်ရှိခဲ့သည်။</p>
+
+                </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+        <!-- <h3 class="team-title">Meet the Team</h3>
+        <div class="card mb-3" style="max-width: 740px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../images/chef1.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Jonh</h3>
+                  <h5>Executive Chef</h5>
+                  <p class="card-text">This is a wider card with<br> supporting text below as a natural<br> lead-in to additional content.<br> This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        
+    <!-- Footer -->
+     
+    <footer class=" content2 footer">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 class="icon">Nautica Haven</h3>
+                <p class="bless">
+                As we part ways, may your journey ahead be filled with joy, peace, and countless blessings.
+                 Until we meet again, take care and stay safe.
+                </p>
+            </div>
+        <div class="col-lg-4">
+            <h3 class="icon">Contact Info</h3>
+            <a href="tel:+95912345678" class="link"><pre class="bless2"><i class="bi bi-telephone-fill"> - 09123456789</i></pre></a>
+            <a href="mailto:nauticahaven@gmail.com" class="link"><pre class="bless2"><i class="bi bi-envelope-fill"> - nauticahaven@gmail.com</i></pre></a>
+            <a href="https://www.Nautica Haven.com" class="link"><pre class="bless2"><i class="bi bi-globe"> - www.Nautica Haven.com</i></pre></a>
+            <a href="https://www.google.com/maps/@16.8395368,95.85189,10z?hl=en&entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="link">
+                <pre class="bless2"><i class="bi bi-geo-alt-fill"> - Yangon</i></pre></a>
+        </div>
+        <div class="col-lg-4">
+            <h3 class="icon">Help Center</h3>
+            <p class="bless2">Online Support</p>
+            <p class="bless2">Privacy Police</p>
+            <p class="bless2">Terms & Condition</p>
+    
+        </div>
+    </div>
+</div>
+<hr style="border: 1px solid white;">
+    
+        <div class="footer-content">
+            <p class="cpr">Copyright © 2024 Nautica Haven. All rights reserved.</p>
+            <p class="name">Nautica Haven</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+
+    <script>
+     $(document).ready(function() {
+    $("#toggleButton").click(function() {
+        $("#toggle").toggle(); // Toggle the visibility
+    });
+});
+
+
+    </script>
+<!-- languages -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const enContent = document.querySelectorAll('.lang-en');
+        const mmContent = document.querySelectorAll('.lang-mm');
+        const languageToggle = document.querySelector('.nav-link.language-toggle');
+        const MM = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#5cb145" d="M1 11H31V21H1z"></path><path d="M5,4H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z" fill="#f6ce46"></path><path d="M5,20H27c2.208,0,4,1.792,4,4v4H1v-4c0-2.208,1.792-4,4-4Z" transform="rotate(180 16 24)" fill="#d83b3f"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path fill="#fff" d="M18.578 16.974L22.75 13.943 17.593 13.943 16 9.039 14.407 13.943 9.25 13.943 13.422 16.974 11.828 21.878 16 18.847 20.172 21.878 18.578 16.974z"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>`;
+        const EN = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#fff"></rect><path d="M1.638,5.846H30.362c-.711-1.108-1.947-1.846-3.362-1.846H5c-1.414,0-2.65,.738-3.362,1.846Z" fill="#a62842"></path><path d="M2.03,7.692c-.008,.103-.03,.202-.03,.308v1.539H31v-1.539c0-.105-.022-.204-.03-.308H2.03Z" fill="#a62842"></path><path fill="#a62842" d="M2 11.385H31V13.231H2z"></path><path fill="#a62842" d="M2 15.077H31V16.923000000000002H2z"></path><path fill="#a62842" d="M1 18.769H31V20.615H1z"></path><path d="M1,24c0,.105,.023,.204,.031,.308H30.969c.008-.103,.031-.202,.031-.308v-1.539H1v1.539Z" fill="#a62842"></path><path d="M30.362,26.154H1.638c.711,1.108,1.947,1.846,3.362,1.846H27c1.414,0,2.65-.738,3.362-1.846Z" fill="#a62842"></path><path d="M5,4h11v12.923H1V8c0-2.208,1.792-4,4-4Z" fill="#102d5e"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path><path fill="#fff" d="M4.601 7.463L5.193 7.033 4.462 7.033 4.236 6.338 4.01 7.033 3.279 7.033 3.87 7.463 3.644 8.158 4.236 7.729 4.827 8.158 4.601 7.463z"></path><path fill="#fff" d="M7.58 7.463L8.172 7.033 7.441 7.033 7.215 6.338 6.989 7.033 6.258 7.033 6.849 7.463 6.623 8.158 7.215 7.729 7.806 8.158 7.58 7.463z"></path><path fill="#fff" d="M10.56 7.463L11.151 7.033 10.42 7.033 10.194 6.338 9.968 7.033 9.237 7.033 9.828 7.463 9.603 8.158 10.194 7.729 10.785 8.158 10.56 7.463z"></path><path fill="#fff" d="M6.066 9.283L6.658 8.854 5.927 8.854 5.701 8.158 5.475 8.854 4.744 8.854 5.335 9.283 5.109 9.979 5.701 9.549 6.292 9.979 6.066 9.283z"></path><path fill="#fff" d="M9.046 9.283L9.637 8.854 8.906 8.854 8.68 8.158 8.454 8.854 7.723 8.854 8.314 9.283 8.089 9.979 8.68 9.549 9.271 9.979 9.046 9.283z"></path><path fill="#fff" d="M12.025 9.283L12.616 8.854 11.885 8.854 11.659 8.158 11.433 8.854 10.702 8.854 11.294 9.283 11.068 9.979 11.659 9.549 12.251 9.979 12.025 9.283z"></path><path fill="#fff" d="M6.066 12.924L6.658 12.494 5.927 12.494 5.701 11.799 5.475 12.494 4.744 12.494 5.335 12.924 5.109 13.619 5.701 13.19 6.292 13.619 6.066 12.924z"></path><path fill="#fff" d="M9.046 12.924L9.637 12.494 8.906 12.494 8.68 11.799 8.454 12.494 7.723 12.494 8.314 12.924 8.089 13.619 8.68 13.19 9.271 13.619 9.046 12.924z"></path><path fill="#fff" d="M12.025 12.924L12.616 12.494 11.885 12.494 11.659 11.799 11.433 12.494 10.702 12.494 11.294 12.924 11.068 13.619 11.659 13.19 12.251 13.619 12.025 12.924z"></path><path fill="#fff" d="M13.539 7.463L14.13 7.033 13.399 7.033 13.173 6.338 12.947 7.033 12.216 7.033 12.808 7.463 12.582 8.158 13.173 7.729 13.765 8.158 13.539 7.463z"></path><path fill="#fff" d="M4.601 11.104L5.193 10.674 4.462 10.674 4.236 9.979 4.01 10.674 3.279 10.674 3.87 11.104 3.644 11.799 4.236 11.369 4.827 11.799 4.601 11.104z"></path><path fill="#fff" d="M7.58 11.104L8.172 10.674 7.441 10.674 7.215 9.979 6.989 10.674 6.258 10.674 6.849 11.104 6.623 11.799 7.215 11.369 7.806 11.799 7.58 11.104z"></path><path fill="#fff" d="M10.56 11.104L11.151 10.674 10.42 10.674 10.194 9.979 9.968 10.674 9.237 10.674 9.828 11.104 9.603 11.799 10.194 11.369 10.785 11.799 10.56 11.104z"></path><path fill="#fff" d="M13.539 11.104L14.13 10.674 13.399 10.674 13.173 9.979 12.947 10.674 12.216 10.674 12.808 11.104 12.582 11.799 13.173 11.369 13.765 11.799 13.539 11.104z"></path><path fill="#fff" d="M4.601 14.744L5.193 14.315 4.462 14.315 4.236 13.619 4.01 14.315 3.279 14.315 3.87 14.744 3.644 15.44 4.236 15.01 4.827 15.44 4.601 14.744z"></path><path fill="#fff" d="M7.58 14.744L8.172 14.315 7.441 14.315 7.215 13.619 6.989 14.315 6.258 14.315 6.849 14.744 6.623 15.44 7.215 15.01 7.806 15.44 7.58 14.744z"></path><path fill="#fff" d="M10.56 14.744L11.151 14.315 10.42 14.315 10.194 13.619 9.968 14.315 9.237 14.315 9.828 14.744 9.603 15.44 10.194 15.01 10.785 15.44 10.56 14.744z"></path><path fill="#fff" d="M13.539 14.744L14.13 14.315 13.399 14.315 13.173 13.619 12.947 14.315 12.216 14.315 12.808 14.744 12.582 15.44 13.173 15.01 13.765 15.44 13.539 14.744z"></path></svg>`;
+
+        function switchToEnglish() {
+            enContent.forEach(el => el.style.display = 'block');
+            mmContent.forEach(el => el.style.display = 'none');
+            // languageToggle.textContent = 'MM'; // Show "MM" when content is in English
+            languageToggle.innerHTML = MM;
+        }
+
+        function switchToBurmese() {
+            enContent.forEach(el => el.style.display = 'none');
+            mmContent.forEach(el => el.style.display = 'block');
+            languageToggle.innerHTML = EN; // Show "EN" when content is in Burmese
+        }
+
+        languageToggle.addEventListener('click', function() {
+            if (languageToggle.innerHTML === MM) {
+                switchToBurmese();
+            } else {
+                switchToEnglish();
+            }
+        });
+
+        // Set default language to English on load
+        switchToEnglish();
+    });
+</script>
+</body>
+
+</html>
